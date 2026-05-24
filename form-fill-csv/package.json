@@ -1,0 +1,12 @@
+{
+  "name": "form-fill-csv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node fill-forms.js"
+  },
+  "dependencies": {
+    "puppeteer": "22.13.1"
+  }
+}

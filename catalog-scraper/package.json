@@ -1,0 +1,13 @@
+{
+  "name": "catalog-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scrape.js",
+    "test": "node scrape.js --max 1"
+  },
+  "dependencies": {
+    "puppeteer": "22.13.1"
+  }
+}
