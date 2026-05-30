@@ -6,7 +6,9 @@ Mobile-first, accessible, fast — the kind of site that doesn't embarrass you o
 
 ## Live demo
 
-Deploy to Vercel in one click after cloning, or run locally:
+**▶ [restaurant-landing-livid.vercel.app](https://restaurant-landing-livid.vercel.app)** — live on Vercel.
+
+Or run locally:
 
 ```bash
 pnpm install   # or npm install

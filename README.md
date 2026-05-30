@@ -4,7 +4,7 @@ Four open-source demo projects showing the kind of work I do as a freelancer.
 
 | Project | Stack | What it shows |
 |---|---|---|
-| [restaurant-landing](./restaurant-landing) | Next.js 14 + Tailwind | Modern marketing landing page, mobile-first, deployable to Vercel |
+| [restaurant-landing](./restaurant-landing) | Next.js 14 + Tailwind | Modern marketing landing page, mobile-first — **[live demo ▶](https://restaurant-landing-livid.vercel.app)** |
 | [catalog-scraper](./catalog-scraper) | Node.js + Puppeteer | Headless browser scraper with retries, pagination, CSV/JSON export |
 | [form-fill-csv](./form-fill-csv) | Node.js + Puppeteer | Read leads from CSV and submit them to a form automatically |
 | [kpi-dashboard-bot](./kpi-dashboard-bot) | Node.js + Puppeteer + cron | Daily screenshot of a dashboard, sent to Telegram |
