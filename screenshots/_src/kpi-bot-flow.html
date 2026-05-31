@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{width:1280px;height:769px;background:linear-gradient(135deg,#0f172a,#1e293b 60%,#334155);font-family:Inter,system-ui,Arial,sans-serif;color:#fff;display:flex;align-items:center;justify-content:center;padding:48px;gap:36px}
+.term-wrap{flex:0.95;background:#0f172a;border-radius:12px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);border:1px solid #1e293b;overflow:hidden;font-family:'JetBrains Mono','Courier New',monospace}
+.titlebar{background:#1e293b;padding:8px 14px;display:flex;gap:6px;border-bottom:1px solid #0f172a}
+.dot{width:11px;height:11px;border-radius:50%}
+.dot.r{background:#ef4444}.dot.y{background:#eab308}.dot.g{background:#22c55e}
+.titlebar .nm{margin-left:auto;color:#64748b;font-size:11px}
+.term{padding:18px 22px;font-size:12px;line-height:1.7;color:#cbd5e1}
+.ok{color:#22c55e}.dim{color:#64748b}.hi{color:#fde68a}.cyan{color:#22d3ee}.purple{color:#c084fc}
+.line + .line{margin-top:2px}
+.tg{margin-top:18px;background:#0b1620;border:1px solid #1e293b;border-radius:12px;padding:12px;display:flex;gap:10px}
+.tg-icon{width:36px;height:36px;background:#0088cc;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:18px;font-weight:700;flex-shrink:0}
+.tg-text{font-family:Inter,sans-serif;font-size:12px;color:#cbd5e1;line-height:1.45}
+.tg-text strong{color:#fff;font-weight:700}
+.tg-text .img{margin-top:6px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:#020617;border:1px solid #1e293b;border-radius:6px;color:#94a3b8;font-size:11px}
+
+.right{flex:0.7;display:flex;flex-direction:column;gap:22px;color:#fff}
+.right h2{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.right p{font-size:15px;line-height:1.6;color:#cbd5e1}
+.flow{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.step{display:flex;align-items:center;gap:14px}
+.step .num{width:32px;height:32px;border-radius:50%;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.4);display:grid;place-items:center;font-weight:700;color:#67e8f9;font-size:13px;flex-shrink:0}
+.step .lbl{font-size:14px;color:#e2e8f0}
+.step .lbl b{color:#fff}
+.cron{margin-top:18px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;font-family:'JetBrains Mono','Courier New',monospace;font-size:12px;color:#a5b4fc}
+.cron .dim2{color:#64748b}
+</style></head><body>
+<div class="term-wrap">
+  <div class="titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="nm">kpi-dashboard-bot — node bot.js</span></div>
+  <div class="term">
+    <div class="line"><span class="dim">$</span> <span class="cyan">node bot.js</span></div>
+    <div class="line"><span class="dim">[2026-05-25] capturing https://www.githubstatus.com</span></div>
+    <div class="line">  <span class="ok">✓</span> saved <span class="purple">output/screenshot-2026-05-25.png</span></div>
+    <div class="line">  posting to Telegram…</div>
+    <div class="line">  <span class="ok">✓</span> Telegram OK</div>
+
+    <div class="tg">
+      <div class="tg-icon">tg</div>
+      <div class="tg-text">
+        <strong>KPI snapshot — 2026-05-25</strong><br>
+        https://www.githubstatus.com
+        <div class="img">🖼️ screenshot-2026-05-25.png · 1.4 MB</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="right">
+  <h2>Daily KPI<br>screenshot &<br>delivery.</h2>
+  <p>One small bot. Runs at 09:00 every day. Wakes up, opens your dashboard, screenshots it, posts to your Telegram. You drink coffee.</p>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><div class="lbl">Open <b>target dashboard URL</b> in headless Chromium</div></div>
+    <div class="step"><div class="num">2</div><div class="lbl">Wait for network idle + <b>2s settle</b> for late charts</div></div>
+    <div class="step"><div class="num">3</div><div class="lbl">Full-page <b>PNG</b> to <code>output/</code></div></div>
+    <div class="step"><div class="num">4</div><div class="lbl">Post to <b>Telegram</b> with date caption</div></div>
+  </div>
+  <div class="cron"><span class="dim2"># crontab -e</span><br>0 9 * * * cd /opt/kpi && node bot.js</div>
+</div>
+</body></html>

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-sage-50 text-ink antialiased; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition; }
+  .btn-primary { @apply btn bg-sage-600 text-white hover:bg-sage-700; }
+  .btn-ghost { @apply btn border border-sage-300 text-sage-700 hover:bg-sage-100; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-sage-600; }
+}

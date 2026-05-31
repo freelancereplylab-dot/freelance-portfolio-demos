@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{width:1280px;height:769px;background:#0a0d12;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;color:#cbd5e1;display:flex;align-items:center;justify-content:center;padding:36px}
+.window{background:#0f172a;border-radius:14px;width:100%;max-width:1180px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);border:1px solid #1e293b;overflow:hidden}
+.titlebar{background:#1e293b;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #0f172a}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:#ef4444}.dot.y{background:#eab308}.dot.g{background:#22c55e}
+.titlebar .name{margin-left:auto;color:#64748b;font-size:13px}
+.term{padding:24px 28px;font-size:14px;line-height:1.7}
+.prompt{color:#94a3b8}
+.cmd{color:#a5b4fc}
+.ok{color:#22c55e}
+.warn{color:#facc15}
+.err{color:#fca5a5}
+.dim{color:#64748b}
+.hi{color:#fde68a}
+.purple{color:#c084fc}
+.cyan{color:#22d3ee}
+.line{display:flex;gap:8px;align-items:baseline}
+.line + .line{margin-top:2px}
+.spacer{height:14px}
+.csvbox{margin-top:18px;background:#020617;border-radius:8px;padding:14px 18px;font-size:12px;color:#94a3b8;line-height:1.6;border:1px solid #1e293b;overflow:hidden}
+.csvbox .header{color:#fde68a;font-weight:700}
+</style></head><body>
+<div class="window">
+  <div class="titlebar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="name">catalog-scraper — node scrape.js</span>
+  </div>
+  <div class="term">
+    <div class="line"><span class="prompt">$</span><span class="cmd">node scrape.js</span></div>
+    <div class="spacer"></div>
+    <div class="line"><span class="dim">page 1 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-1.html</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">812ms</span></div>
+    <div class="line"><span class="dim">page 2 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-2.html</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">503ms</span></div>
+    <div class="line"><span class="dim">page 3 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-3.html</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">478ms</span></div>
+    <div class="line"><span class="dim">page 4 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-4.html</span></div>
+    <div class="line"><span class="warn">  retry 1/3 after 1000ms: net::ERR_NETWORK_CHANGED</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">1521ms</span></div>
+    <div class="line"><span class="dim">page 5 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-5.html</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">456ms</span></div>
+    <div class="line"><span class="dim">…</span></div>
+    <div class="line"><span class="dim">page 50 →</span><span class="cyan">https://books.toscrape.com/catalogue/page-50.html</span></div>
+    <div class="line"><span class="dim">  20 books in</span><span class="hi">412ms</span></div>
+    <div class="spacer"></div>
+    <div class="line"><span class="ok">✓</span><span>Done. <span class="hi">1000</span> books written to <span class="purple">./output/</span></span></div>
+    <div class="csvbox">
+      <div class="header">title,price,inStock,rating,url</div>
+      <div>A Light in the Attic,£51.77,true,3,books.toscrape.com/...</div>
+      <div>Tipping the Velvet,£53.74,true,1,books.toscrape.com/...</div>
+      <div>Sharp Objects,£47.82,true,4,books.toscrape.com/...</div>
+      <div>Sapiens: A Brief History,£54.23,true,5,books.toscrape.com/...</div>
+      <div>The Requiem Red,£22.65,true,1,books.toscrape.com/...</div>
+      <div class="dim">… 995 more rows</div>
+    </div>
+  </div>
+</div>
+</body></html>

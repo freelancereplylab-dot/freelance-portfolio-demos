@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{width:1280px;height:769px;background:#0a0d12;font-family:'JetBrains Mono','Fira Code','Courier New',monospace;color:#cbd5e1;display:flex;align-items:center;justify-content:center;padding:36px;gap:24px}
+.window{background:#0f172a;border-radius:14px;flex:1;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);border:1px solid #1e293b;overflow:hidden}
+.titlebar{background:#1e293b;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #0f172a}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:#ef4444}.dot.y{background:#eab308}.dot.g{background:#22c55e}
+.titlebar .name{margin-left:auto;color:#64748b;font-size:13px}
+.term{padding:22px 26px;font-size:13px;line-height:1.7}
+.prompt{color:#94a3b8}
+.cmd{color:#a5b4fc}
+.ok{color:#22c55e;font-weight:700}
+.fail{color:#fca5a5;font-weight:700}
+.dim{color:#64748b}
+.hi{color:#fde68a}
+.cyan{color:#22d3ee}
+.line + .line{margin-top:2px}
+.spacer{height:14px}
+.csvbox{margin-top:16px;background:#020617;border-radius:8px;padding:12px 16px;font-size:11px;color:#94a3b8;line-height:1.6;border:1px solid #1e293b}
+.csvbox .header{color:#fde68a;font-weight:700;margin-bottom:4px}
+.csvbox .row{display:grid;grid-template-columns:24px 110px 60px 1fr;gap:10px;align-items:baseline}
+.csvbox .row.ok{color:#22c55e}
+.csvbox .row .resp{color:#94a3b8;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style></head><body>
+<div class="window">
+  <div class="titlebar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="name">form-fill-csv — node fill-forms.js --headed</span>
+  </div>
+  <div class="term">
+    <div class="line"><span class="prompt">$</span><span class="cmd">node fill-forms.js</span></div>
+    <div class="spacer"></div>
+    <div class="line"><span class="dim">Loaded</span><span class="hi">5 rows</span><span class="dim">from sample-data.csv</span></div>
+    <div class="line"><span class="dim">row 1/5 (Alice Pham) …</span><span class="ok">OK</span></div>
+    <div class="line"><span class="dim">row 2/5 (Bao Tran) …</span><span class="ok">OK</span></div>
+    <div class="line"><span class="dim">row 3/5 (Chi Nguyen) …</span><span class="ok">OK</span></div>
+    <div class="line"><span class="dim">row 4/5 (Duy Le) …</span><span class="ok">OK</span></div>
+    <div class="line"><span class="dim">row 5/5 (Em Vo) …</span><span class="ok">OK</span></div>
+    <div class="spacer"></div>
+    <div class="line"><span>Done. <span class="hi">5/5 OK</span>. Report →</span><span class="cyan">output/report.csv</span></div>
+
+    <div class="csvbox">
+      <div class="header">index,name,status,response</div>
+      <div class="row ok"><span>1</span><span>Alice Pham</span><span>OK</span><span class="resp">{"args":{},"data":"","files":{},"form":{"custname":"Alice Pham","custtel":"+84905…</span></div>
+      <div class="row ok"><span>2</span><span>Bao Tran</span><span>OK</span><span class="resp">{"args":{},"data":"","files":{},"form":{"custname":"Bao Tran","size":"large","topp…</span></div>
+      <div class="row ok"><span>3</span><span>Chi Nguyen</span><span>OK</span><span class="resp">{"args":{},"data":"","files":{},"form":{"custname":"Chi Nguyen","size":"small","top…</span></div>
+      <div class="row ok"><span>4</span><span>Duy Le</span><span>OK</span><span class="resp">{"args":{},"data":"","files":{},"form":{"custname":"Duy Le","size":"medium","toppin…</span></div>
+      <div class="row ok"><span>5</span><span>Em Vo</span><span>OK</span><span class="resp">{"args":{},"data":"","files":{},"form":{"custname":"Em Vo","size":"large","topping"…</span></div>
+    </div>
+  </div>
+</div>
+</body></html>
